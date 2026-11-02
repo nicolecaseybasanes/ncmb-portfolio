@@ -1,18 +1,18 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, GraduationCap, Code2, ArrowLeft } from 'lucide-react';
-import ScrollReveal from '../components/ScrollReveal'; // ADDED
+import ScrollReveal from '../components/ScrollReveal';
 
 export default function About() {
   return (
     <div className="min-h-screen pt-32 pb-24 px-6 max-w-6xl mx-auto">
       
-      {/* Back Button (Optional, for UX) */}
+      {/* Back Button */}
       <Link to="/" className="inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white mb-8 transition-colors">
         <ArrowLeft size={16} /> Back to Home
       </Link>
 
       {/* Top Section: Profile & Intro */}
-      <ScrollReveal direction="up" delay={0.1}> {/* ADDED */}
+      <ScrollReveal direction="up" delay={0.1}>
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center mb-16">
           
           {/* Left: Image Card */}
@@ -25,7 +25,6 @@ export default function About() {
                   className="w-full h-full object-cover"
                   onError={(e) => { e.target.src = 'https://via.placeholder.com/400?text=Your+Photo'; }}
                 />
-                {/* Optional small text overlay mimicking the design */}
                 <div className="absolute bottom-4 left-0 w-full text-center">
                   <span className="bg-white/80 dark:bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-gray-800 dark:text-gray-200">
                     
@@ -43,15 +42,17 @@ export default function About() {
             <h1 className="text-5xl md:text-6xl font-serif text-gray-900 dark:text-white mb-4 transition-colors">
               Nicole Casey<span className="text-[var(--accent-mint)] dark:text-[var(--accent-mint-glow)]">!</span>
             </h1>
-            <h2 className="text-sm font-bold text-gray-800 dark:text-gray-200 mb-6">
-              3rd Year College Student
+            <h2 className="text-sm font-bold text-[var(--accent-mint)] dark:text-[var(--accent-mint-glow)] mb-6 uppercase tracking-wider">
+              Designer & Developer
             </h2>
             
-            <p className="text-sm md:text-base text-gray-500 dark:text-gray-400 leading-relaxed mb-4 max-w-xl transition-colors">
-              I blend minimalist UI, soft neumorphism, and structured systems thinking to make digital experiences feel effortlessly simple.
+            {/* DESCRIPTION WITH text-justify */}
+            <p className="text-sm md:text-base text-gray-500 dark:text-gray-400 leading-relaxed mb-4 max-w-xl transition-colors text-justify">
+              I build projects that solve real business problems. I combine my interest in UI/UX, Graphic Design, and Systems Analysis to make sure a system is both beautiful and logical. I also use Project Management to lead the team and Software Engineering to build the actual code. I enjoy connecting the creative side of design with the technical side of code.
             </p>
-            <p className="text-sm md:text-base text-gray-500 dark:text-gray-400 leading-relaxed mb-8 max-w-xl transition-colors">
-              This portfolio brings together my computer laboratory activities in Web Development, exploring how thoughtful interfaces and well-structured code work together.
+
+            <p className="text-sm md:text-base text-gray-500 dark:text-gray-400 leading-relaxed mb-8 max-w-xl transition-colors text-justify">
+              Here, you will find a collection of my digital projects.
             </p>
 
             <Link 
@@ -63,10 +64,10 @@ export default function About() {
             </Link>
           </div>
         </div>
-      </ScrollReveal> {/* ADDED */}
+      </ScrollReveal>
 
       {/* Bottom Section: Academic & Skills Grid */}
-      <ScrollReveal direction="up" delay={0.2}> {/* ADDED */}
+      <ScrollReveal direction="up" delay={0.2}>
         <div className="grid lg:grid-cols-2 gap-8">
           
           {/* Academic Foundation Card */}
@@ -119,7 +120,6 @@ export default function About() {
                     <p className="text-[10px] text-gray-400 mb-2">Strand: Science, Technology, Engineering, and Mathematics Strand</p>
                     <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1 list-disc pl-4 marker:text-[var(--accent-mint)] dark:marker:text-[var(--accent-mint-glow)]">
                       <li>With Academic Excellence Award</li>
-                      
                     </ul>
                   </div>
                 </div>
@@ -173,7 +173,7 @@ export default function About() {
           </div>
 
         </div>
-      </ScrollReveal> {/* ADDED */}
+      </ScrollReveal>
     </div>
   );
 }

@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 export default function Navbar() {
-  // 1. Basahin kung may naka-save na theme sa localStorage
   const [dark, setDark] = useState(() => {
     if (typeof window !== 'undefined') {
       const savedTheme = localStorage.getItem('theme');
@@ -15,7 +14,6 @@ export default function Navbar() {
 
   const location = useLocation();
 
-  // 2. I-apply ang class at i-save sa localStorage kapag nagbago ang state
   useEffect(() => {
     if (dark) {
       document.documentElement.classList.add('dark');
@@ -33,7 +31,7 @@ export default function Navbar() {
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 7.6, duration: 0.8, ease: "easeOut" }}
+        transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
         className="flex items-center gap-1.5 p-2 rounded-full bg-white/90 dark:bg-[#1a221e]/90 backdrop-blur-xl border border-white/40 dark:border-white/5 shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.3)] transition-all duration-300"
       >
         

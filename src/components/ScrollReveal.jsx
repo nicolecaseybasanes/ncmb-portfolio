@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export default function ScrollReveal({ children, delay = 0, direction = 'up' }) {
+export default function ScrollReveal({ children, delay = 0, direction = 'up', className = '' }) {
   const directions = {
     up: { y: 40, x: 0 },
     down: { y: -40, x: 0 },
@@ -10,6 +10,7 @@ export default function ScrollReveal({ children, delay = 0, direction = 'up' }) 
 
   return (
     <motion.div
+      className={className} // <-- IDINAGDAG ITO
       initial={{ 
         opacity: 0, 
         ...directions[direction] 
@@ -19,7 +20,6 @@ export default function ScrollReveal({ children, delay = 0, direction = 'up' }) 
         x: 0, 
         y: 0 
       }}
-      // Changed 'once: true' to 'once: false' so it replays every time
       viewport={{ once: false, margin: "-50px" }} 
       transition={{ 
         duration: 0.7, 
